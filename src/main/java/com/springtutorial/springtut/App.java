@@ -1,6 +1,7 @@
 package com.springtutorial.springtut;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -15,16 +16,22 @@ public class App
        // Bike obj = new Bike();
         //obj.drive();
         
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        //ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
       //  vehicle obj =(vehicle)context.getBean("bike");
-      //  vehicle obj =(vehicle)context.getBean("car");
-       // obj.drive();
+       // vehicle obj =(vehicle)context.getBean("car");
+        //obj.drive();
         
         
         
        // Tyre t = new Tyre();
        //Instead of creating the instance, get it from bean.
-        Tyre t = (Tyre) context.getBean("tyre");
-       System.out.println(t);
+       // Tyre t = (Tyre) context.getBean("tyre");
+      // System.out.println(t);
+        
+        
+        ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
+        Suzuki gxr = factory.getBean(Suzuki.class);
+        gxr.spec();
+       
     }
 }
