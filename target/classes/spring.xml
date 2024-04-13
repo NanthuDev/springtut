@@ -9,6 +9,8 @@ xmlns:context="http://www.springframework.org/schema/context"
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 	<!-- <bean id="vehicle" class="com.springtutorial.springtut.Bike"></bean> -->
- 	<context:annotation-config base-package='com.springtutorial.springtut'></context:annotation-config>
-
+ <context:component-scan base-package="com.springtutorial.springtut"></context:component-scan>
+ <bean id="tyre" class="com.springtutorial.springtut.Tyre">
+	<property name="brand" value="CEAT"></property>
+ </bean>
 </beans>
